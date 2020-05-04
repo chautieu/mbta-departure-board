@@ -1,0 +1,40 @@
+.flex-container {
+  font-family:sans-serif;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-container > table {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+#time-table {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px auto;
+}
+
+#time-table td, #time-table th {
+  border: 1px solid #ddd;
+  padding: 24px;
+}
+
+#time-table tr:nth-child(even){
+  background: #f1f1f1;
+}
+
+#time-table tr:hover {
+  background-color: #ddd;
+}
+
+#time-table th {
+  padding: 24px;
+  text-align: left;
+  background-color: #525252;
+  color: white;
+}

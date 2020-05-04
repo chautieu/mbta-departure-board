@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MBTA Departure Board</title>
+    <link href="./static/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <div class="flex-container">
+        <h1>{{ stop_name }}</h1>
+        <h2>Current time: {{ current_time }}</h2>
+        <h2>Departures</h2>
+        <table id="time-table">
+          <tr>
+            <th>Time</th>
+            <th>Line Name</th>
+            <th>Destination</th>
+            <th>Status</th>
+          </tr>
+          {% for route in departures.values() %}
+          <tr>
+            <td>{{ route.departure }}</td>
+            <td>{{ route.long_name }}</td>
+            <td>{{ route.destination }}</td>
+            <td>{{ route.trip_status }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+
+        <h2>Arrivals</h2>
+        <table id="time-table">
+          <tr>
+            <th>Time</th>
+            <th>Line</th>
+            <th>Status</th>
+          </tr>
+          {% for route in arrivals.values() %}
+          <tr>
+            <td>{{ route.arrival }}</td>
+            <td>{{ route.line_name }}</td>
+            <td>{{ route.trip_status }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+  </body>
+</html>
